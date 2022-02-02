@@ -6,6 +6,7 @@ from core import models
 
 
 class UserAdmin(BaseUserAdmin):
+
     ordering = ['id']
     list_display = ['email', 'name']
     fieldsets = (
@@ -20,8 +21,9 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'password1','password2')
+            'fields': ('email', 'password1', 'password2')
         }),
     )
+
 
 admin.site.register(models.User, UserAdmin)
